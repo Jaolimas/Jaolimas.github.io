@@ -1,0 +1,3 @@
+- [x] Add clearCart function in script.js
+- [x] Add clear cart button in index.html cart-footer
+- [x] Fix card flip back after size selection in script.js

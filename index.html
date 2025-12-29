@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVRA</title>
+    <!-- Fonte: display chamativa + família para textos -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="logosite-removebg-preview.png" type="image/x-icon">
+</head>
+<body>
+    <!-- background decor images (fixed while scrolling) -->
+    <div class="bg-decor bg-top-right" aria-hidden="true"></div>
+    <div class="bg-decor bg-bottom-left" aria-hidden="true"></div>
+    <div class="bg-decor bg-center" aria-hidden="true"></div>
+    <div class="bg-decor bg-bottom-right" aria-hidden="true"></div>
+
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="logosite-removebg-preview.png" alt="AVRA Logo">
+                <span>AVRA</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#produtos" class="nav-link">Produtos</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+            </nav>
+            
+            <div class="cart-container">
+                <button class="cart-icon" onclick="openCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Bem-vindo ao StoreHub</h1>
+            <p>Explore nossos produtos premium</p>
+        </section>
+
+        <section id="produtos" class="products-section">
+            <h2>Nossos Produtos</h2>
+            <div class="products-grid">
+                <!-- Produtos serão adicionados via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>🛒 Seu Carrinho</h2>
+                <button class="close-cart" onclick="closeCart()">✕</button>
+            </div>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="totalPrice">R$ 0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="product-modal">
+      <div class="product-modal-content">
+        <button class="product-close" onclick="closeProductModal()">✕</button>
+        <div class="product-modal-body">
+          <div class="product-gallery">
+            <div class="main-image-container">
+              <img id="mainProductImage" src="" alt="Product Image" class="main-product-image">
+            </div>
+            <div class="thumbnail-gallery" id="thumbnailGallery"></div>
+          </div>
+          <div class="product-details">
+            <h2 id="modalProductName"></h2>
+            <p id="modalProductDescription"></p>
+            <div class="modal-price" id="modalProductPrice"></div>
+            <div class="modal-size-section" id="modalSizeSection"></div>
+            <button class="modal-add-to-cart" onclick="addToCartFromModal()">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="about-modal" aria-hidden="true">
+      <div class="about-card" role="dialog" aria-labelledby="aboutTitle" aria-modal="true">
+        <button class="about-close" aria-label="Fechar">✕</button>
+        <h2 id="aboutTitle">Sobre a StoreHub</h2>
+        <div class="about-content">
+          <p><strong>StoreHub</strong> é uma curadoria de produtos premium que une design, qualidade e experiência de compra fluida. Aqui você encontra peças selecionadas com atenção ao detalhe, materiais duráveis e um toque estético contemporâneo.</p>
+          <p>Nossa missão: oferecer produtos que inspiram confiança e estilo — com um processo de compra simples, suporte rápido e entrega segura.</p>
+          <ul>
+            <li>Seleção curada de roupas e calçados</li>
+            <li>Visual moderno e responsivo</li>
+            <li>Opções de tamanho claras e fáceis de escolher</li>
+            <li>Checkout direto e seguro</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
